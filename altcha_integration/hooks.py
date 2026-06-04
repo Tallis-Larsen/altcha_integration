@@ -5,6 +5,10 @@ app_description = "Provides ALTCHA integration for webforms."
 app_email = "tallisblarsen@gmail.com"
 app_license = "agpl-3.0"
 
+fixtures = [
+    {"dt": "Custom Field", "filters": [["fieldname", "=", "custom_require_altcha_for_submit"]]}
+]
+
 # Apps
 # ------------------
 
@@ -30,7 +34,7 @@ app_license = "agpl-3.0"
 
 # include js, css files in header of web template
 # web_include_css = "/assets/altcha_integration/css/altcha_integration.css"
-# web_include_js = "/assets/altcha_integration/js/altcha_integration.js"
+web_include_js = "/assets/altcha_integration/js/web_form_altcha.js"
 
 # include custom scss in every website theme (without file extension ".scss")
 # website_theme_scss = "altcha_integration/public/scss/website"
@@ -183,9 +187,9 @@ app_license = "agpl-3.0"
 # Overriding Methods
 # ------------------------------
 #
-# override_whitelisted_methods = {
-# 	"frappe.desk.doctype.event.event.get_events": "altcha_integration.event.get_events"
-# }
+override_whitelisted_methods = {
+	"frappe.website.doctype.web_form.web_form.accept": "altcha_integration.altcha_integration.api.accept"
+}
 #
 # each overriding function accepts a `data` argument;
 # generated from the base implementation of the doctype dashboard,

@@ -1,0 +1,43 @@
+{
+ "actions": [],
+ "creation": "2026-06-04 15:59:42.950833",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "hmac_key"
+ ],
+ "fields": [
+  {
+   "fieldname": "hmac_key",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "HMAC Key"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2026-06-04 16:04:29.009258",
+ "modified_by": "Administrator",
+ "module": "ALTCHA Integration",
+ "name": "ALTCHA Integration Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}
