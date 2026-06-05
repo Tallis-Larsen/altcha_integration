@@ -29,12 +29,14 @@ def get_challenge():
 	)
 	signature = hmac.new(_get_hmac_key(), payload.encode(), hashlib.sha256).hexdigest()
 
-	return {
+	# Update frappe.response directly because returning a dict wraps it 
+	# in {"message": ...}, which ALTCHA doesn't understand.
+	frappe.response.update({
 		"algorithm": algorithm,
 		"challenge": challenge,
 		"salt": salt,
 		"signature": signature,
-	}
+	})
 
 
 # Verify the ALTCHA payload submitted with a web form.
